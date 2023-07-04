@@ -2,6 +2,11 @@
 name = "wasmedge_hyper_rustls"
 version = "0.1.0"
 edition = "2021"
+description = """
+Support HTTPS and TLS connection in hyper-rs applications that are compiled to Wasm (WebAssembly)
+"""
+license = "Apache-2.0"
+repository = "https://github.com/second-state/wasmedge_hyper_rustls"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
