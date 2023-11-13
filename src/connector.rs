@@ -1,4 +1,3 @@
-
 use std::{
     fmt,
     future::Future,
@@ -53,6 +52,20 @@ impl<T> fmt::Debug for HttpsConnector<T> {
         f.debug_struct("HttpsConnector")
             .field("force_https", &self.force_https)
             .finish()
+    }
+}
+
+impl<H, C> From<(H, C)> for HttpsConnector<H>
+where
+    C: Into<Arc<wasmedge_rustls_api::ClientConfig>>,
+{
+    fn from((http, cfg): (H, C)) -> Self {
+        HttpsConnector {
+            force_https: false,
+            http,
+            tls_config: cfg.into(),
+            override_server_name: None,
+        }
     }
 }
 
