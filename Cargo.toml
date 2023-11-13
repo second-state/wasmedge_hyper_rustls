@@ -1,6 +1,6 @@
 [package]
 name = "wasmedge_hyper_rustls"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = """
 Support HTTPS and TLS connection in hyper-rs applications that are compiled to Wasm (WebAssembly)
